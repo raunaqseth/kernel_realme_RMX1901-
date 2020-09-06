@@ -180,6 +180,7 @@ void operate_mode_switch(struct touchpanel_data *ts)
                 input_event(ts->ps_input_dev, EV_MSC, MSC_RAW, 0);
                 input_sync(ts->ps_input_dev);
             }
+	    infra_prox_far = false;
             ts->ts_ops->mode_switch(ts->chip_data, MODE_FACE_DETECT, ts->fd_enable == 1);
         }
 
